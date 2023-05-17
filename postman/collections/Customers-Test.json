@@ -12,6 +12,46 @@
 			"item": [
 				{
 					"name": "Get all users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8f5f93e5-da51-4141-9ca9-5db9df2269e3",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Body matches string\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"success\");",
+									"});",
+									"",
+									"//performance test",
+									"pm.test(\"Response time is less than 600ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(600);",
+									"});",
+									"",
+									"//schema ",
+									"const schema = {",
+									"\"type\": \"array\",",
+									" \"properties\": {",
+									"        \"status\": { \"type\" : \"string\" },",
+									"        \"firstname\": { \"type\" : \"string\" },",
+									"        \"lastname\": { \"type\" : \"string\" },",
+									"        \"id\": { \"type\" : \"string\" }",
+									"    }",
+									"};",
+									"",
+									"pm.test(\"Validate schema\", () => {",
+									"pm.response.to.have.jsonSchema(schema);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"id": "7fd2091d-0e48-48ea-9dd8-77c33ed6685b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true

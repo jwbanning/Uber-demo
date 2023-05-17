@@ -4,7 +4,7 @@
 		"name": "Customers",
 		"description": "API for creating and managing banking customers.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "16901632-3bfec880-d78b-4c7b-8604-59c4e4063ff4"
+		"_uid": "16913431-3bfec880-d78b-4c7b-8604-59c4e4063ff4"
 	},
 	"item": [
 		{
@@ -111,11 +111,79 @@
 							],
 							"cookie": [],
 							"body": "[\n  {\n    \"status\": \"success\"\n  },\n  {\n    \"firstName\": \"Ben\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n    \"lastName\": \"Smith\"\n  }\n]"
+						},
+						{
+							"id": "0d6e5abe-6fd7-4dd6-8970-23dcb0688746",
+							"name": "404 BAD",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/get",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "<string>"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n]"
 						}
 					]
 				},
 				{
-					"name": "Get users by last name",
+					"name": "Get all users",
 					"id": "73f08550-ecd1-4884-ac08-f068a42de45b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -129,7 +197,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/get/?firstName=Gottlieb",
+							"raw": "{{baseUrl}}/get/?all=<string>",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -139,9 +207,14 @@
 							],
 							"query": [
 								{
+									"description": "The user's first name (required)",
 									"key": "firstName",
 									"value": "Gottlieb",
-									"description": "The user's first name (required)"
+									"disabled": true
+								},
+								{
+									"key": "all",
+									"value": "<string>"
 								}
 							]
 						},
@@ -219,6 +292,75 @@
 							],
 							"cookie": [],
 							"body": "[\n  {\n    \"status\": \"success\"\n  },\n  {\n    \"firstName\": \"Vivian\",\n    \"id\": \"0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7\",\n    \"lastName\": \"Lynch\"\n  }\n]"
+						},
+						{
+							"id": "af60474a-2d76-4231-b3d8-2a15932c9af7",
+							"name": "404 BAD",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/get/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"get",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Connection",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Content-Length",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "Date",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "ETag",
+									"value": "<string>"
+								},
+								{
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									},
+									"key": "X-Powered-By",
+									"value": "<string>"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"firstName\": \"<string>\",\n    \"id\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"status\": \"<string>\"\n  }\n]"
 						}
 					]
 				}
