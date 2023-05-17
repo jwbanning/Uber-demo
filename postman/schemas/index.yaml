@@ -77,60 +77,6 @@ paths:
                     id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                     lastName: Smith
                     status: success
-        "404":
-          description: 404 bad
-          headers:
-            Connection:
-              schema:
-                type: string
-                example: keep-alive
-            Content-Length:
-              schema:
-                type: string
-                example: "105"
-            Date:
-              schema:
-                type: string
-                example: "Fri, 11 Jan 2019 00:00:53 GMT"
-            ETag:
-              schema:
-                type: string
-                example: "W/\"69-ti7ujd/Cyb8EeoWoqRXh482Zy5o\""
-            X-Powered-By:
-              schema:
-                type: string
-                example: Express
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    firstName:
-                      type: string
-                      example: Ben
-                    id:
-                      type: string
-                      example: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
-                    lastName:
-                      type: string
-                      example: Smith
-                    status:
-                      type: string
-                      example: success
-                example:
-                  - status: success
-                  - firstName: Ben
-                    id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
-                    lastName: Smith
-              examples:
-                200 OK:
-                  value:
-                    - status: success
-                    - firstName: Ben
-                      id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
-                      lastName: Smith            
   /delete:
     delete:
       tags:
@@ -257,6 +203,60 @@ paths:
                     - firstName: Ben
                       id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
                       lastName: Smith
+        "404":
+          description: 404 BAD
+          headers:
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Content-Length:
+              schema:
+                type: string
+                example: "105"
+            Date:
+              schema:
+                type: string
+                example: "Fri, 11 Jan 2019 00:00:53 GMT"
+            ETag:
+              schema:
+                type: string
+                example: "W/\"69-ti7ujd/Cyb8EeoWoqRXh482Zy5o\""
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    firstName:
+                      type: string
+                      example: Ben
+                    id:
+                      type: string
+                      example: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
+                    lastName:
+                      type: string
+                      example: Smith
+                    status:
+                      type: string
+                      example: success
+                example:
+                  - status: success
+                  - firstName: Ben
+                    id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
+                    lastName: Smith
+              examples:
+                404 BAD:
+                  value:
+                    - status: failue
+                    - firstName: Fail
+                      id: 0729d37c-ef9f-4ffa-8f71-a6eedf1f95b7
+                      lastName: Fail              
   /get/:
     get:
       tags:
